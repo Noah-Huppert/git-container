@@ -10,9 +10,21 @@ if ! eval "$(ssh-agent -s)" > /dev/null; then
 	exit 1
 fi
 
-echo "Adding SSH private key to SSH agent (will prompt you for your SSH key password)"
-if ! ssh-add ~/.ssh/private_key; then
+#Enter passphrase for /root/.ssh/private_key:
+ssh_password="$(cat /root/ssh_password)"
+
+expect_script="spawn ssh-add /root/.ssh/private_key
+expect \"Enter passphrase\"
+send \"$ssh_password\r\"
+expect eof"
+
+if ! (echo "$expect_script" | expect - > /dev/null); then
 	echo "Error: Failed to add private key to SSH agent" >&2
+	exit 1
+fi
+
+if ! rm /root/ssh_password; then
+	echo "Error: Failed to remove SSH private key password file" >&2
 	exit 1
 fi
 

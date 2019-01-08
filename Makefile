@@ -4,5 +4,10 @@ TAG=noahhuppert/git-container:latest
 
 # build container
 build:
-	if [ ! -f ssh_private_key ]; then echo "ssh_private_key file must be in directory" >&2; exit 1; fi
-	docker build -t "${TAG}" .
+	./scripts/build-check
+	docker build \
+		-t "${TAG}"\
+		--build-arg SSH_NAME="${SSH_NAME}" \
+		--build-arg SSH_EMAIL="${SSH_EMAIL}" \
+		--build-arg SSH_PASSWORD="${SSH_PASSWORD}" \
+		.
