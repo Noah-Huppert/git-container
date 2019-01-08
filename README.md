@@ -21,10 +21,10 @@ SSH private key and private key password.
 	- `SSH_PASSWORD`: Private key password
 2. Run `make build`
 
-**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**  
+**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**  
 **NEVER** push this container to a registry. As it will contain your SSH
-private key.  
-**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**  
+private key and password.  
+**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**  
 
 # Run
 ```
