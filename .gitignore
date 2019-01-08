@@ -1,2 +1,5 @@
 # SSH Private key
 ssh_private_key
+
+# Environment variable file
+.env
