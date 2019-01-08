@@ -14,10 +14,10 @@ A Git container with a Git client.
    of `ssh_private_key` in the 
 2. Run `make build`
 
-**!!!!!!!!**  
+**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**  
 **NEVER** push this container to a registry. As it will contain your SSH
-private key.
-**!!!!!!!!**  
+private key.  
+**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**  
 
 # Run
 ```
