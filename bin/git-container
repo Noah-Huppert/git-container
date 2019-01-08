@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#?
+# git-container - Run Git container
+#
+# USAGE
+#	git-container
+#
+# BEHAVIOR
+# 	Runs the Git Docker container with the working directory shared 
+#	between the guest and host.
+TAG="noahhuppert/git-container:latest"
+docker run \
+	-it \
+	--rm \
+	-v "$PWD:/home/root/shared" \
+	"$TAG"
