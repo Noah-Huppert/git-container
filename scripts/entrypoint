@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#?
+# entrypoint - Adds SSH key to SSH agent and runs bash
+#
+# USAGE
+#	entrypoint
+#?
+if ! eval "$(ssh-agent -s)" > /dev/null; then
+	echo "Error: Failed to start SSH agent" >&2 
+	exit 1
+fi
+
+echo "Adding SSH private key to SSH agent (will prompt you for your SSH key password)"
+if ! ssh-add ~/.ssh/private_key; then
+	echo "Error: Failed to add private key to SSH agent" >&2
+	exit 1
+fi
+
+bash
