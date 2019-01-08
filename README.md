@@ -7,7 +7,7 @@ Container with a Git client.
 - [Run](#run)
 
 # Overview
-A Git container with a Git client.  
+A container with a Git client.  
 
 Note: This is probably a bad idea. Since it builds a Docker container with your
 SSH private key and private key password.
