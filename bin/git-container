@@ -15,5 +15,5 @@ fi
 docker run \
 	-it \
 	--rm \
-	-v "$PWD:/home/root/shared" \
+	-v "$PWD:/root/shared" \
 	"$TAG"
