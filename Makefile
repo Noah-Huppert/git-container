@@ -1,6 +1,9 @@
 .PHONY: build
 
-TAG=noahhuppert/git-container:latest
+USER=noahhuppert
+NAME=git-container
+VERSION=latest
+TAG=${USER}/${NAME}:${VERSION}
 
 # build container
 build:
